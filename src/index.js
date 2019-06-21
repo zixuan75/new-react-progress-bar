@@ -27,7 +27,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       progressValue: 0,
-      maxProgressValue: 2
+      maxProgressValue: "x"
     };
     this.setMaxValue = this.setMaxValue.bind(this);
     this.increase = this.increase.bind(this);
@@ -65,6 +65,7 @@ class App extends React.Component {
       this.setState(state => ({ progressValue: state.progressValue + 1 }));
     } else {
       this.setState({ progressValue: 0 });
+      this.setState({ maxProgressValue: "x" });
       if (
         confirm("Progress Value is greater than the maximum progress value")
       ) {
@@ -80,6 +81,7 @@ class App extends React.Component {
     if (this.state.progressValue > 0) {
       this.setState(state => ({ progressValue: state.progressValue - 1 }));
     } else {
+      this.setState({ maxProgressValue: "x" });
       if (confirm("Progress Value is less than 0")) {
         return true;
       } else {
