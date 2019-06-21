@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       progressValue: 0,
-      maxProgressValue: 1
+      maxProgressValue: 2
     };
     this.setMaxValue = this.setMaxValue.bind(this);
     this.increase = this.increase.bind(this);
