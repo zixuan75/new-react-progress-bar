@@ -18,13 +18,11 @@ class App extends React.Component {
     this.decrease = this.decrease.bind(this);
   }
   setMaxValue() {
-    if (!isNaN(document.getElementById("max-progress").value)) {
-      if (parseInt(document.getElementById("max-progress").value, 10) > 0) {
+    var maxProgress = document.getElementById("max-progress").value;
+    if (!isNaN(maxProgress)) {
+      if (parseInt(maxProgress, 10) > 0) {
         this.setState({
-          maxProgressValue: parseInt(
-            document.getElementById("max-progress").value,
-            10
-          )
+          maxProgressValue: parseInt(maxProgress, 10)
         });
         document.getElementById("max-progress").value = "";
       } else {
