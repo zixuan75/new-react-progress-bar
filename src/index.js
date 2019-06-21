@@ -89,9 +89,8 @@ class App extends React.Component {
             <progress
               id="progress-bar"
               value={this.state.progressValue}
-              max={this.state.maxProgressValue}>
-              0 out of 200
-            </progress>
+              max={this.state.maxProgressValue}
+            />
             <button className="progress-button" onClick={this.increase}>
               +
             </button>
