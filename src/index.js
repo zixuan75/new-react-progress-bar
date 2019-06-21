@@ -32,8 +32,10 @@ class App extends React.Component {
     this.setMaxValue = this.setMaxValue.bind(this);
     this.increase = this.increase.bind(this);
     this.decrease = this.decrease.bind(this);
+    this.stop = this.stop.bind(this);
   }
-  setMaxValue() {
+  setMaxValue(event) {
+    event.preventDefault();
     var maxProgress = document.getElementById("max-progress").value;
     if (!isNaN(maxProgress)) {
       if (parseInt(maxProgress, 10) > 1) {
@@ -89,17 +91,25 @@ class App extends React.Component {
       }
     }
   }
+  stop() {
+    this.setState({
+      progressValue: 0,
+      maxProgressValue: "x"
+    });
+  }
   render() {
     return (
       <div>
         <Header />
         <hr />
         <div id="progress-form">
-          <label htmlFor="max-progress">Enter the maximum value: </label>
-          <input type="text" id="max-progress" />
-          <button id="enter-button" onClick={this.setMaxValue}>
-            Enter!
-          </button>
+          <form onSubmit={this.setMaxValue}>
+            <label htmlFor="max-progress">Enter the maximum value: </label>
+            <input type="text" id="max-progress" />
+            <button type="submit" id="enter-button">
+              Enter!
+            </button>
+          </form>
 
           <div className="progress-bar-form">
             <button className="progress-button" onClick={this.decrease}>
@@ -119,6 +129,9 @@ class App extends React.Component {
               tasks complete
             </p>
           </div>
+          <button className="cancel-button" onClick={this.stop}>
+            Stop/Cancel
+          </button>
         </div>
         <hr />
         <Footer />
