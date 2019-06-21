@@ -11,7 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       progressValue: 0,
-      maxProgressValue: 0
+      maxProgressValue: 1
     };
     this.setMaxValue = this.setMaxValue.bind(this);
     this.increase = this.increase.bind(this);
@@ -20,17 +20,19 @@ class App extends React.Component {
   setMaxValue() {
     var maxProgress = document.getElementById("max-progress").value;
     if (!isNaN(maxProgress)) {
-      if (parseInt(maxProgress, 10) > 0) {
+      if (parseInt(maxProgress, 10) > 1) {
         this.setState({
           maxProgressValue: parseInt(maxProgress, 10)
         });
         document.getElementById("max-progress").value = "";
       } else {
         document.getElementById("max-progress").value = "";
-        if (confirm("Maxinum progress value must be positive")) {
+        if (confirm("Maxinum progress value must be greater than 1 to use")) {
           return true;
         } else {
-          throw new Error("Maxinum progress value must be positive");
+          throw new Error(
+            "Maxinum progress value must be greater than 1 to use"
+          );
         }
       }
     } else {
@@ -100,6 +102,7 @@ class App extends React.Component {
             </p>
           </div>
         </div>
+        <hr />
       </div>
     );
   }
