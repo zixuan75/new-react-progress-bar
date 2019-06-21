@@ -3,8 +3,23 @@ import ReactDOM from "react-dom";
 
 import "./styles.css";
 
-function Render(props) {
-  return <div>{props.component}</div>;
+class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>
+          Welcome to this website. This is one of the examples of advanced
+          progress bars. This website uses ReactJS as one of its main
+          components. Please remember to use JavaScript in your browser.
+        </p>
+      </div>
+    );
+  }
+}
+class Footer extends React.Component {
+  render() {
+    return <div />;
+  }
 }
 class App extends React.Component {
   constructor(props) {
@@ -75,6 +90,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>The React Progress Bar Example</h1>
+        <Header />
         <hr />
         <div id="progress-form">
           <label htmlFor="max-progress">Enter the maximum value: </label>
@@ -103,10 +119,20 @@ class App extends React.Component {
           </div>
         </div>
         <hr />
+        <Footer />
       </div>
     );
   }
 }
 
+class Render extends React.Component {
+  render() {
+    return (
+      <div>
+        <App />
+      </div>
+    );
+  }
+}
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Render component={<App />} />, rootElement);
+ReactDOM.render(<Render />, rootElement);
