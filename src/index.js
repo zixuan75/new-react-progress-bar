@@ -7,6 +7,7 @@ class Header extends React.Component {
   render() {
     return (
       <div>
+        <h1>The React Progress Bar Example</h1>
         <p>
           Welcome to this website. This is one of the examples of advanced
           progress bars. This website uses ReactJS as one of its main
@@ -89,7 +90,6 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>The React Progress Bar Example</h1>
         <Header />
         <hr />
         <div id="progress-form">
