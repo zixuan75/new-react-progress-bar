@@ -31,3 +31,6 @@ h1 {
   background-color: blue;
   color: white;
 }
+#progress-form {
+  padding-left: 120px;
+}

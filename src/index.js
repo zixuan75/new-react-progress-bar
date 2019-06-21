@@ -74,30 +74,32 @@ class App extends React.Component {
       <div>
         <h1>The React Progress Bar Example</h1>
         <hr />
-        <label htmlFor="max-progress">Enter the maximum value: </label>
-        <input type="text" id="max-progress" />
-        <button id="enter-button" onClick={this.setMaxValue}>
-          Enter!
-        </button>
-
-        <div className="progress-bar-form">
-          <button className="progress-button" onClick={this.decrease}>
-            -
+        <div id="progress-form">
+          <label htmlFor="max-progress">Enter the maximum value: </label>
+          <input type="text" id="max-progress" />
+          <button id="enter-button" onClick={this.setMaxValue}>
+            Enter!
           </button>
 
-          <progress
-            id="progress-bar"
-            value={this.state.progressValue}
-            max={this.state.maxProgressValue}>
-            0 out of 200
-          </progress>
-          <button className="progress-button" onClick={this.increase}>
-            +
-          </button>
-          <p className="progress-value">
-            {this.state.progressValue} out of {this.state.maxProgressValue}{" "}
-            tasks complete
-          </p>
+          <div className="progress-bar-form">
+            <button className="progress-button" onClick={this.decrease}>
+              -
+            </button>
+
+            <progress
+              id="progress-bar"
+              value={this.state.progressValue}
+              max={this.state.maxProgressValue}>
+              0 out of 200
+            </progress>
+            <button className="progress-button" onClick={this.increase}>
+              +
+            </button>
+            <p className="progress-value">
+              {this.state.progressValue} out of {this.state.maxProgressValue}{" "}
+              tasks complete
+            </p>
+          </div>
         </div>
       </div>
     );
