@@ -57,6 +57,9 @@ button {
 	border: 5px solid brown;
 }
 .arrow {
-	padding-left: 235px;
+	padding-left: 210px;
 	font-size: 120px;
+}
+.arrow1 {
+	float: left;
 }

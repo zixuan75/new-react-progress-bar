@@ -132,6 +132,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<Header />
+				<div className="arrow arrow1">&#x2B07;</div>
 				<div className="arrow">&#x2B07;</div>
 				<hr />
 				<div id="progress-form">
