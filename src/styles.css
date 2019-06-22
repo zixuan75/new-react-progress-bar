@@ -43,3 +43,15 @@ button {
 	background-color: darkblue;
 	color: white;
 }
+#max-progress {
+	border: 1px solid brown;
+}
+#max-progress:focus {
+	border: 5px dashed red;
+}
+#enter-button {
+	border: 2px solid brown;
+}
+#enter-button:focus {
+	border: 5px solid brown;
+}

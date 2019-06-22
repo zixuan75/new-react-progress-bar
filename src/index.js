@@ -114,6 +114,7 @@ class App extends React.Component {
 						</button>
 					</form>
 
+					<br />
 					<div className="progress-bar-form">
 						<button className="progress-button" onClick={this.decrease}>
 							-
