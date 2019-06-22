@@ -39,29 +39,39 @@ class App extends React.Component {
 	}
 	setMaxValue(event) {
 		event.preventDefault();
-		var maxProgress = document.getElementById("max-progress").value;
-		if (!isNaN(maxProgress)) {
-			if (parseInt(maxProgress, 10) > 1) {
-				this.setState({
-					maxProgressValue: parseInt(maxProgress, 10)
-				});
-				document.getElementById("max-progress").value = "";
+		if (this.state.maxProgressValue === "x") {
+			var maxProgress = document.getElementById("max-progress").value;
+			if (!isNaN(maxProgress)) {
+				if (parseInt(maxProgress, 10) > 1) {
+					this.setState({
+						maxProgressValue: parseInt(maxProgress, 10)
+					});
+					document.getElementById("max-progress").value = "";
+				} else {
+					document.getElementById("max-progress").value = "";
+					if (confirm("Maxinum progress value must be greater than 1 to use")) {
+						return true;
+					} else {
+						throw new Error(
+							"Maxinum progress value must be greater than 1 to use"
+						);
+					}
+				}
 			} else {
 				document.getElementById("max-progress").value = "";
-				if (confirm("Maxinum progress value must be greater than 1 to use")) {
+				if (confirm("Maximum progress value must be a number")) {
 					return true;
 				} else {
-					throw new Error(
-						"Maxinum progress value must be greater than 1 to use"
-					);
+					throw new Error("Maximum progress value must be a number");
 				}
 			}
 		} else {
 			document.getElementById("max-progress").value = "";
-			if (confirm("Maximum progress value must be a number")) {
+			if (confirm("Maximum progress value already set")) {
 				return true;
 			} else {
-				throw new Error("Maximum progress value must be a number");
+				this.setState({ maxProgressValue: "x" });
+				throw new Error("Maximum progress value already set");
 			}
 		}
 	}
