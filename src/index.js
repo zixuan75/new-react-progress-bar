@@ -132,6 +132,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<Header />
+				<div className="arrow">&#x2B07;</div>
 				<hr />
 				<div id="progress-form">
 					<form onSubmit={this.setMaxValue}>
@@ -143,6 +144,7 @@ class App extends React.Component {
 					</form>
 
 					<br />
+
 					<div className="progress-bar-form">
 						<button className="progress-button" onClick={this.decrease}>
 							-

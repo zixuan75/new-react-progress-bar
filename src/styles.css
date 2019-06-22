@@ -1,5 +1,6 @@
 #root {
 	font-family: sans-serif;
+	margin: 0;
 }
 .progress-button {
 	border-radius: 10px;
@@ -54,4 +55,8 @@ button {
 }
 #enter-button:focus {
 	border: 5px solid brown;
+}
+.arrow {
+	padding-left: 235px;
+	font-size: 120px;
 }
