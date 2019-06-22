@@ -105,10 +105,18 @@ class App extends React.Component {
 		}
 	}
 	stop() {
-		this.setState({
-			progressValue: 0,
-			maxProgressValue: "x"
-		});
+		if (this.state.maxProgressValue !== "x") {
+			this.setState({
+				progressValue: 0,
+				maxProgressValue: "x"
+			});
+		} else {
+			if (confirm("Already cleaned up")) {
+				return true;
+			} else {
+				throw new Error("Already cleaned up");
+			}
+		}
 	}
 	render() {
 		return (
