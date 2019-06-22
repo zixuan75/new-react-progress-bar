@@ -1,38 +1,45 @@
 #root {
-  font-family: sans-serif;
+	font-family: sans-serif;
 }
 .progress-button {
-  border-radius: 10px;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  box-shadow: 7px 120px 90px darkblue;
-  width: 50px;
-  height: 50px;
+	border-radius: 10px;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	box-shadow: 7px 120px 90px darkblue;
+	width: 50px;
+	height: 50px;
 }
 .progress-button:focus {
-  border: 5px solid lightblue;
+	border: 5px solid lightblue;
 }
 #progress-bar {
-  border: 5px solid green;
+	border: 5px solid green;
 }
 h1 {
-  font-family: cursive;
+	font-family: cursive;
 }
 .progress-bar-form {
-  width: 379px;
-  height: 120px;
-  border: 5px solid salmon;
+	width: 379px;
+	height: 120px;
+	border: 5px solid salmon;
 }
 .progress-value {
-  padding-left: 5px;
+	padding-left: 5px;
 }
 button {
-  background-color: darkblue;
-  color: white;
+	background-color: darkblue;
+	color: white;
 }
 .cancel-button {
-  width: 389px;
+	width: 389px;
 }
 #progress-form {
-  padding-left: 120px;
+	padding-left: 120px;
+}
+.header {
+	text-align: center;
+	border: 10px solid blue;
+	border-radius: 20px;
+	background-color: darkblue;
+	color: white;
 }
