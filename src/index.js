@@ -49,12 +49,22 @@ class App extends React.Component {
 					document.getElementById("max-progress").value = "";
 				} else {
 					document.getElementById("max-progress").value = "";
-					if (confirm("Maxinum progress value must be greater than 1 to use")) {
-						return true;
+					if (maxProgress !== "") {
+						if (
+							confirm("Maximum progress value must be greater than 1 to use")
+						) {
+							return true;
+						} else {
+							throw new Error(
+								"Maximum progress value must be greater than 1 to use"
+							);
+						}
 					} else {
-						throw new Error(
-							"Maxinum progress value must be greater than 1 to use"
-						);
+						if (confirm("Input cannot be blank")) {
+							return true;
+						} else {
+							throw new Error("Input cannot be blank");
+						}
 					}
 				}
 			} else {
