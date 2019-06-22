@@ -16,7 +16,7 @@
 	border: 5px solid green;
 }
 h1 {
-	font-family: cursive;
+	font-family: cursive; /* only on later versions of Firefox*/
 }
 .progress-bar-form {
 	width: 379px;

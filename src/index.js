@@ -6,10 +6,9 @@ import "./styles.css";
 class Header extends React.Component {
 	render() {
 		return (
-			<div>
-				<div className="header">
-					<h1>The React Progress Bar Example</h1>
-				</div>
+			<div className="header">
+				<h1>The React Progress Bar Example</h1>
+
 				<p>
 					Welcome to this website. This is one of the examples of advanced
 					progress bars. This website uses ReactJS as one of its main
