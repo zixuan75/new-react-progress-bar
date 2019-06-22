@@ -43,10 +43,23 @@ class App extends React.Component {
       var maxProgress = document.getElementById("max-progress").value;
       if (!isNaN(maxProgress)) {
         if (parseInt(maxProgress, 10) > 1) {
-          this.setState({
-            maxProgressValue: parseInt(maxProgress, 10)
-          });
-          document.getElementById("max-progress").value = "";
+          if (maxProgress < 500) {
+            this.setState({
+              maxProgressValue: parseInt(maxProgress, 10)
+            });
+            document.getElementById("max-progress").value = "";
+          } else {
+            document.getElementById("max-progress").value = "";
+            if (
+              confirm("Maximum progress value must be less than 500 to use")
+            ) {
+              return true;
+            } else {
+              throw new Error(
+                "Maximum progress value must be less than 500 to use"
+              );
+            }
+          }
         } else {
           document.getElementById("max-progress").value = "";
           if (maxProgress !== "") {
@@ -161,7 +174,10 @@ class App extends React.Component {
                 +
               </button>
               <p className="progress-value">
-                {this.state.progressValue} out of {this.state.maxProgressValue}{" "}
+                {this.state.progressValue} out of{" "}
+                <span className="max-progress-value">
+                  {this.state.maxProgressValue}
+                </span>{" "}
                 tasks complete
               </p>
             </div>

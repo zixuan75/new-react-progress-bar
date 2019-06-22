@@ -75,3 +75,10 @@ button {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.max-progress-value {
+  border: 5px solid red;
+  color: darkred;
+}
+.max-progress-value:hover {
+  border: 5px solid darkred;
+}
