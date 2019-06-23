@@ -163,7 +163,7 @@ class App extends React.Component {
         <Header />
         <div className="arrow arrow1">&#x2B07;</div>
         <div className="arrow">&#x2B07;</div>
-        <hr />
+        <div className="separation" />
         <div id="navbar-form">
           <div id="progress-form">
             <form onSubmit={this.setMaxValue}>
@@ -204,7 +204,7 @@ class App extends React.Component {
             </button>
           </div>
         </div>
-        <hr />
+        <div className="separation" />
         <Footer />
       </div>
     );
