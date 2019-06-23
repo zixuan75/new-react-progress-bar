@@ -27,19 +27,51 @@ class Footer extends React.Component {
       items: [],
       text: ""
     };
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(event) {
+    this.setState({ text: event.target.value });
+  }
+  handleSubmit(event) {
+    event.preventDefault();
+    if (!this.state.text.length) {
+      return;
+    }
+    const newItem = {
+      text: this.state.text,
+      id: Date.now()
+    };
+    this.setState(state => ({ items: state.items.concat(newItem), text: "" }));
   }
   render() {
     return (
       <div>
         <div className="review">
-          <form>
-            <label htmlFor="new-review">Review the progress bar system: </label>
-            <br />
-            <textarea id="new-review" />
-            <br />
-            <button className="add-review">Add Review</button>
-          </form>
+          <label htmlFor="new-review">Review the progress bar system: </label>
+          <br />
+          <textarea
+            id="new-review"
+            onChange={this.handleChange}
+            value={this.state.text}
+          />
+          <br />
+          <button className="add-review" onClick={this.handleSubmit}>
+            Add Review
+          </button>
+          <List items={this.state.items} />
         </div>
+      </div>
+    );
+  }
+}
+class List extends React.Component {
+  render() {
+    return (
+      <div>
+        {this.props.items.map(item => (
+          <p key={item.id}>{item.text}</p>
+        ))}
       </div>
     );
   }
