@@ -54,12 +54,20 @@ class Footer extends React.Component {
             id="new-review"
             onChange={this.handleChange}
             value={this.state.text}
+            style={{ backgroundColor: "blue", color: "white" }}
           />
           <br />
           <button className="add-review" onClick={this.handleSubmit}>
             Add Review
           </button>
           <List items={this.state.items} />
+        </div>
+        <div className="separation" />
+        <div className="thanks">
+          <p>
+            Thank you for visiting this website. Please check more of my
+            projects if you want to.
+          </p>
         </div>
         <div className="separation" />
       </div>

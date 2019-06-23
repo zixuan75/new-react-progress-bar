@@ -52,6 +52,10 @@ button {
   border-left: 5px solid salmon;
   border-bottom: 5px solid salmon;
   border-top: 5px solid salmon;
+  border-radius: 20px 0px 0px 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
   background-color: olivedrab;
   color: lightblue;
 }
@@ -91,15 +95,22 @@ button {
 .max-progress-value:hover {
   border: 5px solid darkred;
 }
-.review {
+.review,
+.thanks {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 120px;
   border-left: 5px solid salmon;
   border-top: 5px solid salmon;
   border-bottom: 5px solid salmon;
+  border-radius: 20px 0px 0px 20px;
+  padding-left: 20px;
   color: green;
   background-color: lightblue;
+}
+.review {
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 #new-review {
   width: 280px;
