@@ -61,6 +61,7 @@ class Footer extends React.Component {
           </button>
           <List items={this.state.items} />
         </div>
+        <div className="separation" />
       </div>
     );
   }
@@ -257,7 +258,6 @@ class App extends React.Component {
         </div>
         <div className="separation" />
         <Footer />
-        <div className="separation" />
       </div>
     );
   }
