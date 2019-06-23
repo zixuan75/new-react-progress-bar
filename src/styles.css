@@ -18,6 +18,7 @@ body {
 }
 #progress-bar {
   border: 5px solid olivedrab;
+  background-color: lightgreen;
 }
 h1 {
   font-family: cursive; /* only on later versions of Firefox*/
@@ -26,6 +27,7 @@ h1 {
   width: 379px;
   height: 120px;
   border: 5px solid darkolivegreen;
+  background-color: lightgrey;
 }
 .progress-value {
   padding-left: 5px;
@@ -53,9 +55,11 @@ button {
 }
 #max-progress {
   border: 2px solid brown;
+  background-color: lightblue;
 }
 #max-progress:focus {
   border: 5px dashed red;
+  background-color: lightgreen;
 }
 #enter-button {
   border: 3px solid brown;

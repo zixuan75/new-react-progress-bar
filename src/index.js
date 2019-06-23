@@ -99,31 +99,47 @@ class App extends React.Component {
     }
   }
   increase() {
-    if (this.state.progressValue < this.state.maxProgressValue) {
-      this.setState(state => ({ progressValue: state.progressValue + 1 }));
+    if (this.state.maxProgressValue !== "x") {
+      if (this.state.progressValue < this.state.maxProgressValue) {
+        this.setState(state => ({ progressValue: state.progressValue + 1 }));
+      } else {
+        this.setState({ progressValue: 0 });
+        this.setState({ maxProgressValue: "x" });
+        if (
+          confirm("Progress Value is greater than the maximum progress value")
+        ) {
+          return true;
+        } else {
+          throw new Error(
+            "Progress Value is greater than the maximum progress value"
+          );
+        }
+      }
     } else {
-      this.setState({ progressValue: 0 });
-      this.setState({ maxProgressValue: "x" });
-      if (
-        confirm("Progress Value is greater than the maximum progress value")
-      ) {
+      if (confirm("Maximum progress value not set yet")) {
         return true;
       } else {
-        throw new Error(
-          "Progress Value is greater than the maximum progress value"
-        );
+        throw new Error("Maximum progress value not set yet");
       }
     }
   }
   decrease() {
-    if (this.state.progressValue > 0) {
-      this.setState(state => ({ progressValue: state.progressValue - 1 }));
+    if (this.state.maxProgressValue !== "x") {
+      if (this.state.progressValue > 0) {
+        this.setState(state => ({ progressValue: state.progressValue - 1 }));
+      } else {
+        this.setState({ maxProgressValue: "x" });
+        if (confirm("Progress Value is less than 0")) {
+          return true;
+        } else {
+          throw new Error("Progress Value is less than 0");
+        }
+      }
     } else {
-      this.setState({ maxProgressValue: "x" });
-      if (confirm("Progress Value is less than 0")) {
+      if (confirm("Maximum progress value not set yet")) {
         return true;
       } else {
-        throw new Error("Progress Value is less than 0");
+        throw new Error("Maximum progress value not set yet");
       }
     }
   }
@@ -151,7 +167,9 @@ class App extends React.Component {
         <div id="navbar-form">
           <div id="progress-form">
             <form onSubmit={this.setMaxValue}>
-              <label htmlFor="max-progress">Enter the maximum value: </label>
+              <label htmlFor="max-progress">
+                Enter the maximum progress bar value:{" "}
+              </label>
               <input type="text" id="max-progress" />
               <button type="submit" id="enter-button">
                 Enter!
