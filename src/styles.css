@@ -46,6 +46,8 @@ button {
   width: 389px;
 }
 #progress-form {
+  margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: 120px;
   border-left: 5px solid salmon;
   border-bottom: 5px solid salmon;
@@ -82,14 +84,26 @@ button {
 .arrow1 {
   float: left;
 }
-#navbar-form {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 .max-progress-value {
   border: 5px solid red;
   color: darkred;
 }
 .max-progress-value:hover {
   border: 5px solid darkred;
+}
+.review {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 120px;
+  border-left: 5px solid salmon;
+  border-top: 5px solid salmon;
+  border-bottom: 5px solid salmon;
+  color: green;
+  background-color: lightblue;
+}
+#new-review {
+  width: 280px;
+}
+.add-review {
+  width: 284px;
 }

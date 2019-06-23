@@ -21,8 +21,27 @@ class Header extends React.Component {
   }
 }
 class Footer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      text: ""
+    };
+  }
   render() {
-    return <div />;
+    return (
+      <div>
+        <div className="review">
+          <form>
+            <label htmlFor="new-review">Review the progress bar system: </label>
+            <br />
+            <textarea id="new-review" />
+            <br />
+            <button className="add-review">Add Review</button>
+          </form>
+        </div>
+      </div>
+    );
   }
 }
 class App extends React.Component {
@@ -206,6 +225,7 @@ class App extends React.Component {
         </div>
         <div className="separation" />
         <Footer />
+        <div className="separation" />
       </div>
     );
   }
