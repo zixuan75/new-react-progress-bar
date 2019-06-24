@@ -27,6 +27,12 @@ body {
 }
 h1 {
   font-family: cursive; /* only on later versions of Firefox*/
+  border: 12px solid skyblue;
+  background-color: teal;
+  color: pink;
+  border-radius: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 .progress-bar-form {
   width: 379px;
