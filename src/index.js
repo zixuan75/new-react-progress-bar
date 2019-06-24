@@ -66,7 +66,7 @@ class Footer extends React.Component {
         <div className="thanks">
           <p>
             Thank you for visiting this website. Please check more of my
-            projects if you want to.
+            projects if you want to. <span>Bye!</span>
           </p>
         </div>
         <div className="separation" />
