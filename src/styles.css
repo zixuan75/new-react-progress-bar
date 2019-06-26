@@ -51,7 +51,9 @@ button {
 .cancel-button {
   width: 389px;
 }
-#progress-form {
+#progress-form,
+.review,
+.thanks {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 120px;
@@ -60,10 +62,17 @@ button {
   border-top: 5px solid salmon;
   border-radius: 20px 0px 0px 20px;
   padding-left: 20px;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 15px;
+}
+#progress-form {
   background-color: olivedrab;
   color: lightblue;
+}
+.review,
+.thanks {
+  background-color: lightblue;
+  color: darkcyan;
 }
 .header {
   text-align: center;
@@ -101,23 +110,6 @@ button {
 .max-progress-value:hover {
   border: 5px solid darkred;
 }
-.review,
-.thanks {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 120px;
-  border-left: 5px solid salmon;
-  border-top: 5px solid salmon;
-  border-bottom: 5px solid salmon;
-  border-radius: 20px 0px 0px 20px;
-  padding-left: 20px;
-  color: darkcyan;
-  background-color: lightblue;
-}
-.review {
-  padding-top: 10px;
-  padding-bottom: 15px;
-}
 #new-review {
   width: 280px;
   height: 210px;
@@ -132,10 +124,16 @@ button {
 .bye,
 .review-text {
   background-color: lightgreen;
-  border: 15px solid lightgreen;
+  padding: 15px;
+}
+.review-text {
+  border-radius: 20px 0px 0px 20px;
+  border: 12px solid darkred;
 }
 .review-text-2 {
   background-color: darkblue;
-  border: 15px solid darkblue;
+  padding: 15px;
   color: lightblue;
+  border-radius: 0px 20px 20px 0px;
+  border: 12px solid darkcyan;
 }

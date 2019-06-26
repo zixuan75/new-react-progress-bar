@@ -49,6 +49,8 @@ class Footer extends React.Component {
       <div>
         <div className="review">
           <br />
+          <br />
+
           <label htmlFor="new-review">
             <span className="review-text">Review the progress bar system:</span>
             <span className="review-text-2">
@@ -56,8 +58,10 @@ class Footer extends React.Component {
             </span>
           </label>
           <br />
-
           <br />
+          <br />
+          <br />
+
           <textarea
             id="new-review"
             onChange={this.handleChange}
