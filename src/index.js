@@ -49,9 +49,11 @@ class Footer extends React.Component {
       <div>
         <div className="review">
           <label htmlFor="new-review">
-            <span>Review the progress bar system:</span> (You can actually write
-            as many reviews as you want!)
+            <span className="review-text">Review the progress bar system:</span>{" "}
+            (You can actually write as many reviews as you want!)
           </label>
+          <br />
+
           <br />
           <textarea
             id="new-review"
@@ -69,7 +71,7 @@ class Footer extends React.Component {
         <div className="thanks">
           <p>
             Thank you for visiting this website. Please check more of my
-            projects if you want to. <span>Bye!</span>
+            projects if you want to. <span className="bye">Bye!</span>
           </p>
         </div>
         <div className="separation" />

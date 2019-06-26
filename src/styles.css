@@ -124,3 +124,8 @@ button {
 .add-review {
   width: 284px;
 }
+.bye,
+.review-text {
+  background-color: lightgreen;
+  border: 15px solid lightgreen;
+}
