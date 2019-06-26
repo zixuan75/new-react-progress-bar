@@ -120,6 +120,7 @@ button {
 .add-review {
   width: 291px;
   height: 121px;
+  border-radius: 0px 0px 20px 20px;
 }
 .bye,
 .review-text {
