@@ -129,3 +129,8 @@ button {
   background-color: lightgreen;
   border: 15px solid lightgreen;
 }
+.review-text-2 {
+  background-color: darkblue;
+  border: 15px solid darkblue;
+  color: lightblue;
+}

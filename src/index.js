@@ -49,8 +49,10 @@ class Footer extends React.Component {
       <div>
         <div className="review">
           <label htmlFor="new-review">
-            <span className="review-text">Review the progress bar system:</span>{" "}
-            (You can actually write as many reviews as you want!)
+            <span className="review-text">Review the progress bar system:</span>
+            <span className="review-text-2">
+              (You can actually write as many reviews as you want!)
+            </span>
           </label>
           <br />
 
