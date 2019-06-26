@@ -106,7 +106,7 @@ class App extends React.Component {
       var maxProgress = document.getElementById("max-progress").value;
       if (!isNaN(maxProgress)) {
         if (parseInt(maxProgress, 10) > 1) {
-          if (maxProgress < 500) {
+          if (maxProgress < 220) {
             this.setState({
               maxProgressValue: parseInt(maxProgress, 10)
             });
@@ -114,12 +114,12 @@ class App extends React.Component {
           } else {
             document.getElementById("max-progress").value = "";
             if (
-              confirm("Maximum progress value must be less than 500 to use")
+              confirm("Maximum progress value must be less than 220 to use")
             ) {
               return true;
             } else {
               throw new Error(
-                "Maximum progress value must be less than 500 to use"
+                "Maximum progress value must be less than 220 to use"
               );
             }
           }
