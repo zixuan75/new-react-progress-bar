@@ -120,12 +120,14 @@ button {
 }
 #new-review {
   width: 280px;
+  height: 210px;
   background-color: green;
   color: white;
   border: 5px solid blue;
 }
 .add-review {
   width: 291px;
+  height: 121px;
 }
 .bye,
 .review-text {
