@@ -61,7 +61,7 @@ class Footer extends React.Component {
             id="new-review"
             onChange={this.handleChange}
             value={this.state.text}
-            style={{ backgroundColor: "blue", color: "white" }}
+            style={{ backgroundColor: "green", color: "white" }}
           />
           <br />
           <button className="add-review" onClick={this.handleSubmit}>
