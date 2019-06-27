@@ -36,7 +36,11 @@ class Footer extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     if (!this.state.text.length) {
-      return;
+      if (confirm("You have to write at least 1 letter inside the box")) {
+        return true;
+      } else {
+        throw new Error("You have to write at least 1 letter inside the box");
+      }
     }
     const newItem = {
       text: this.state.text,
