@@ -300,5 +300,8 @@ class Render extends React.Component {
     );
   }
 }
+function renderRoot(rootEl) {
+  ReactDOM.render(<Render />, rootEl);
+}
 const rootElement = document.getElementById("root");
-ReactDOM.render(<Render />, rootElement);
+renderRoot(rootElement);
