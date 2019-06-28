@@ -95,7 +95,12 @@ class List extends React.Component {
     return (
       <div>
         {this.props.items.map(item => (
-          <p key={item.id}>{item.text}</p>
+          <div className="reviews-border">
+            <div className="separation" />
+            <p className="reviews" key={item.id}>
+              {item.text}
+            </p>
+          </div>
         ))}
       </div>
     );
