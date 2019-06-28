@@ -36,10 +36,10 @@ class Footer extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     if (!this.state.text.length) {
-      if (confirm("You have to write at least 1 letter inside the box")) {
+      if (confirm("Review cannot be empty")) {
         return true;
       } else {
-        throw new Error("You have to write at least 1 letter inside the box");
+        throw new Error("Review cannot be empty");
       }
     }
     const newItem = {
