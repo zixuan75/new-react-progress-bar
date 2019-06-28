@@ -70,6 +70,7 @@ class Footer extends React.Component {
             id="new-review"
             onChange={this.handleChange}
             value={this.state.text}
+            placeholder="Review the progress bar system:"
           />
           <br />
           <button className="add-review" onClick={this.handleSubmit}>
