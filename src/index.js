@@ -90,22 +90,21 @@ class Footer extends React.Component {
     );
   }
 }
-class List extends React.Component {
-  render() {
-    return (
-      <div>
-        {this.props.items.map(item => (
-          <div className="reviews-border">
-            <div className="separation" />
-            <p className="reviews" key={item.id}>
-              {item.text}
-            </p>
-          </div>
-        ))}
-      </div>
-    );
-  }
+function List(props) {
+  return (
+    <div>
+      {props.items.map(item => (
+        <div className="reviews-border">
+          <div className="separation" />
+          <p className="reviews" key={item.id}>
+            {item.text}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
 }
+
 class App extends React.Component {
   constructor(props) {
     super(props);
