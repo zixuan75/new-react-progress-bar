@@ -54,6 +54,7 @@ button {
 #progress-form,
 .review,
 .thanks {
+  display: block;
   margin-top: 20px;
   margin-bottom: 20px;
   margin-left: 120px;
@@ -64,11 +65,14 @@ button {
   padding-left: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
+  background-color: gray;
+  color: white;
 }
-#progress-form {
+#progress-form:hover {
   background-color: olivedrab;
-  color: lightblue;
+  color: rgb(0, 0, 110);
 }
+
 .review,
 .thanks {
   background-color: lightblue;
