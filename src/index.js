@@ -13,23 +13,6 @@ $(document).ready(function() {
     }
   );
 });
-class Header extends React.Component {
-  render() {
-    return (
-      <div>
-        <div className="header">
-          <h1>The React Progress Bar Example</h1>
-
-          <p>
-            Welcome to this website. This is one of the examples of advanced
-            progress bars. This website uses ReactJS as one of its main
-            components. Please remember to use JavaScript in your browser.
-          </p>
-        </div>
-      </div>
-    );
-  }
-}
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -61,7 +44,7 @@ class Footer extends React.Component {
   render() {
     return (
       <div>
-        <div className="review">
+        <div id="review">
           <br />
           <br />
 
@@ -89,7 +72,7 @@ class Footer extends React.Component {
           <List items={this.state.items} />
         </div>
         <div className="separation" />
-        <div className="thanks">
+        <div id="thanks">
           <p>
             Thank you for visiting this website. Please check more of my
             projects if you want to. <span className="bye">Bye!</span>
@@ -301,6 +284,44 @@ class App extends React.Component {
   }
 }
 
+class Header extends React.Component {
+  render() {
+    return (
+      <div>
+        <div class="container">
+          <nav>
+            <h1>React Progress Bar</h1>
+            <ul>
+              <li>
+                <a href="#">NAVBAR</a>
+              </li>
+              <li>
+                <a href="#header">Welcome!</a>
+              </li>
+              <li>
+                <a href="#progress-form">ProgressForm</a>
+              </li>
+              <li>
+                <a href="#review">Review</a>
+              </li>
+              <li>
+                <a href="#thanks">Bye!</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div id="header">
+          <h1 id="react-h1">The React Progress Bar</h1>
+          <p>
+            This is one of the examples of advanced progress bars. This is also
+            a improvement to the old React Progress Bar which was active from
+            December 2018 to January 2019. Welcome!
+          </p>
+        </div>
+      </div>
+    );
+  }
+}
 class Render extends React.Component {
   render() {
     return (

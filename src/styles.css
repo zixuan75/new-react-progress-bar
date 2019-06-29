@@ -25,7 +25,7 @@ body {
   border: 5px solid olivedrab;
   background-color: lightgreen;
 }
-h1 {
+#react-h1 {
   font-family: cursive; /* only on later versions of Firefox*/
   border: 12px solid skyblue;
   background-color: teal;
@@ -52,8 +52,8 @@ button {
   width: 389px;
 }
 #progress-form,
-.review,
-.thanks {
+#review,
+#thanks {
   display: block;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -72,13 +72,18 @@ button {
   background-color: olivedrab;
   color: rgb(0, 0, 110);
 }
+.container {
+  background-color: lightgreen;
+  padding: 25px;
+  margin-bottom: 40px;
+}
 
-.review,
-.thanks {
+#review,
+#thanks {
   background-color: lightblue;
   color: darkcyan;
 }
-.header {
+#header {
   text-align: center;
   border: 10px solid blue;
   border-radius: 20px;
