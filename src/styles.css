@@ -89,11 +89,12 @@ li {
 li a {
   display: block;
   color: #444;
-  padding: 26px 16px 14px 40px;
+  padding: 26px 16px 14px 16px;
   text-decoration: none;
 }
 li a:hover {
   color: black;
+  border-top: 2px solid;
 }
 .h1 {
   float: left;
