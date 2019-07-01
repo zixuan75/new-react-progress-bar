@@ -77,6 +77,27 @@ button {
   padding: 25px;
   margin-bottom: 40px;
 }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+}
+li a {
+  display: block;
+  color: #444;
+  padding: 26px 16px 14px 40px;
+  text-decoration: none;
+}
+li a:hover {
+  color: black;
+}
+.h1 {
+  float: left;
+}
 
 #review,
 #thanks {

@@ -290,10 +290,9 @@ class Header extends React.Component {
       <div>
         <div class="container">
           <nav>
-            <h1>React Progress Bar</h1>
             <ul>
               <li>
-                <a href="#">NAVBAR</a>
+                <h1>React Progress Bar</h1>
               </li>
               <li>
                 <a href="#header">Welcome!</a>
