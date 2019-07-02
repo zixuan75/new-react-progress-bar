@@ -74,7 +74,7 @@ button {
 }
 .container {
   background-color: lightgreen;
-  padding: 25px;
+  padding: 60px;
   margin-bottom: 40px;
 }
 ul {
@@ -89,15 +89,18 @@ li {
 li a {
   display: block;
   color: #444;
-  padding: 26px 16px 14px 16px;
+  padding: 43px 16px 14px 16px;
   text-decoration: none;
+  border-top: 5px solid lightgreen;
+  transition: all ease-in-out 1000ms;
 }
 li a:hover {
   color: black;
-  border-top: 2px solid;
+  border-top: 5px solid black;
 }
-.h1 {
+#navbar-h1 {
   float: left;
+  font-size: 37px;
 }
 
 #review,
