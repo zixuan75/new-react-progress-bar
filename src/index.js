@@ -1,18 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import $ from "jquery";
 
 import "./styles.css";
-$(document).ready(function() {
-  $("#progress-form").hover(
-    function() {
-      $("#progress-form").animate({ marginLeft: "20px" });
-    },
-    function() {
-      $("#progress-form").animate({ marginLeft: "120px" });
-    }
-  );
-});
 class Footer extends React.Component {
   constructor(props) {
     super(props);

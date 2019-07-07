@@ -67,15 +67,24 @@ button {
   padding-bottom: 15px;
   background-color: gray;
   color: white;
+  transition: all ease-in-out 250ms;
 }
-#review,
-#thanks {
-  background-color: lightblue;
+#review {
   color: darkcyan;
+}
+#thanks {
+  color: lightgreen;
+}
+#review:hover,
+#thanks:hover {
+  color: darkcyan;
+  background-color: lightblue;
+  margin-left: 20px;
 }
 #progress-form:hover {
   background-color: olivedrab;
   color: rgb(0, 0, 110);
+  margin-left: 20px;
 }
 .container {
   background-color: lightgreen;
@@ -164,7 +173,11 @@ li a:hover {
 .bye,
 .review-text {
   background-color: lightgreen;
+  border: 5px solid darkblue;
+  outline: 5px solid lightgreen;
+  color: darkcyan;
   padding: 15px;
+  margin-left: 20px;
 }
 .review-text {
   border-radius: 20px 0px 0px 20px;
@@ -176,6 +189,7 @@ li a:hover {
   color: lightblue;
   border-radius: 0px 20px 20px 0px;
   border: 12px solid darkcyan;
+  outline: 5px solid lightgreen;
 }
 .reviews {
   border-left: 5px solid blue;
