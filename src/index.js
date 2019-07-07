@@ -291,9 +291,7 @@ class Header extends React.Component {
         <div class="container">
           <nav>
             <ul>
-              <li>
-                <h1 id="navbar-h1">React Progress Bar</h1>
-              </li>
+              <h1 id="navbar-h1">React Progress Bar</h1>
               <li>
                 <a href="#header">Welcome!</a>
               </li>

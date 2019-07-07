@@ -68,6 +68,11 @@ button {
   background-color: gray;
   color: white;
 }
+#review,
+#thanks {
+  background-color: lightblue;
+  color: darkcyan;
+}
 #progress-form:hover {
   background-color: olivedrab;
   color: rgb(0, 0, 110);
@@ -90,6 +95,7 @@ li a {
   display: block;
   color: #444;
   padding: 43px 16px 14px 16px;
+  margin-left: 24px;
   text-decoration: none;
   border-top: 5px solid lightgreen;
   transition: all ease-in-out 1000ms;
@@ -103,11 +109,6 @@ li a:hover {
   font-size: 37px;
 }
 
-#review,
-#thanks {
-  background-color: lightblue;
-  color: darkcyan;
-}
 #header {
   text-align: center;
   border: 10px solid blue;
