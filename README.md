@@ -5,3 +5,4 @@ Hello! This is the new progress bar of React. I've made a few changes but you wi
 :rainbow: This is also one of the hardest projects I've worked on.
 
 It is also currently the fastest-growing project I've worked on.
+The project still doesn't work on phones but we're trying to fix that. Some of the contents that you see on computers overflow on phones.
