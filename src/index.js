@@ -277,24 +277,26 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <div class="container">
-          <nav>
-            <ul>
-              <h1 id="navbar-h1">React Progress Bar</h1>
-              <li>
-                <a href="#header">Welcome!</a>
-              </li>
-              <li>
-                <a href="#progress-form">ProgressForm</a>
-              </li>
-              <li>
-                <a href="#review">Review</a>
-              </li>
-              <li>
-                <a href="#thanks">Bye!</a>
-              </li>
-            </ul>
-          </nav>
+        <div class="position">
+          <div class="container">
+            <nav>
+              <ul>
+                <h1 id="navbar-h1">React Progress Bar</h1>
+                <li>
+                  <a href="#header">Welcome!</a>
+                </li>
+                <li>
+                  <a href="#progress-form">ProgressForm</a>
+                </li>
+                <li>
+                  <a href="#review">Review</a>
+                </li>
+                <li>
+                  <a href="#thanks">Bye!</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
         <div id="header">
           <h1 id="react-h1">The React Progress Bar</h1>
