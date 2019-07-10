@@ -174,6 +174,7 @@ li a:hover {
   font-size: 15px;
   border: 5px solid blue;
   resize: none;
+  border-radius: 0px 50px 0px 0px;
 }
 #new-review:focus {
   border: 5px solid darkblue;
