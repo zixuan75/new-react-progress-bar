@@ -223,9 +223,11 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <div className="arrow arrow1">&#x2B07;</div>
-        <div className="arrow">&#x2B07;</div>
-        <div className="separation" />
+
+        <br />
+
+        <div style={{ marginBottom: "350px" }} />
+        <div className="separation separation-block" />
         <div id="navbar-form">
           <div id="progress-form">
             <form onSubmit={this.setMaxValue}>
@@ -282,9 +284,6 @@ class Header extends React.Component {
             <nav>
               <ul>
                 <h1 id="navbar-h1">React Progress Bar</h1>
-                <li>
-                  <a href="#header">Welcome!</a>
-                </li>
                 <li>
                   <a href="#progress-form">ProgressForm</a>
                 </li>
