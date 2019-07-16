@@ -42,15 +42,31 @@ body {
   background-color: lightgrey;
   color: darkblue;
 }
+#popup {
+  display: none;
+}
 .progress-value {
   padding-left: 5px;
 }
-button {
+.normal-button {
   background-color: darkblue;
   color: white;
 }
+.cancel-button,
+.change-settings {
+  width: 379px;
+  margin: 0px 0px 0px 0px;
+  background-color: blue;
+  color: white;
+  border: 0px solid;
+}
 .cancel-button {
-  width: 389px;
+  border-bottom: 1px solid darkblue;
+}
+.group {
+  border: 5px solid darkblue;
+  width: 379px;
+  background-color: blue;
 }
 #progress-form,
 #review,
@@ -68,7 +84,6 @@ button {
   padding-bottom: 15px;
   background-color: gray;
   color: white;
-  transition: all ease-in-out 750ms;
 }
 #review {
   color: darkcyan;
@@ -80,11 +95,6 @@ button {
 #thanks:hover {
   color: darkcyan;
   background-color: lightblue;
-  margin-left: 20px;
-}
-#progress-form:hover {
-  background-color: olivedrab;
-  color: rgb(0, 0, 110);
   margin-left: 20px;
 }
 
@@ -162,6 +172,8 @@ li a:hover {
   background-color: lightgreen;
 }
 #enter-button {
+  background-color: darkblue;
+  color: white;
   border: 3px solid brown;
 }
 #enter-button:focus {

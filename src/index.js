@@ -55,7 +55,9 @@ class Footer extends React.Component {
             placeholder="Review the progress bar system:"
           />
           <br />
-          <button className="add-review" onClick={this.handleSubmit}>
+          <button
+            className="add-review normal-button"
+            onClick={this.handleSubmit}>
             Add Review
           </button>
           <List items={this.state.items} />
@@ -92,64 +94,67 @@ class App extends React.Component {
     super(props);
     this.state = {
       progressValue: 0,
-      maxProgressValue: "x"
+      maxProgressValue: "x",
+      popupNumber: 0,
+      buttonValue: "Change Settings"
     };
     this.setMaxValue = this.setMaxValue.bind(this);
     this.increase = this.increase.bind(this);
     this.decrease = this.decrease.bind(this);
     this.stop = this.stop.bind(this);
+    this.changeSettings = this.changeSettings.bind(this);
+    this.changeMaxValue = this.changeMaxValue.bind(this);
+  }
+  maxProgressAlgorithm(maxProgress, idstring) {
+    if (!isNaN(maxProgress)) {
+      if (parseInt(maxProgress, 10) > 1) {
+        if (maxProgress < 220) {
+          this.setState({
+            maxProgressValue: parseInt(maxProgress, 10)
+          });
+          document.getElementById(idstring).value = "";
+        } else {
+          document.getElementById(idstring).value = "";
+          if (confirm("Maximum progress value must be less than 220 to use")) {
+            return true;
+          } else {
+            throw new Error(
+              "Maximum progress value must be less than 220 to use"
+            );
+          }
+        }
+      } else {
+        document.getElementById(idstring).value = "";
+        if (maxProgress !== "") {
+          if (confirm("Maximum progress value must be greater than 1 to use")) {
+            return true;
+          } else {
+            throw new Error(
+              "Maximum progress value must be greater than 1 to use"
+            );
+          }
+        } else {
+          if (confirm("Input cannot be blank")) {
+            return true;
+          } else {
+            throw new Error("Input cannot be blank");
+          }
+        }
+      }
+    } else {
+      document.getElementById(idstring).value = "";
+      if (confirm("Maximum progress value must be a number")) {
+        return true;
+      } else {
+        throw new Error("Maximum progress value must be a number");
+      }
+    }
   }
   setMaxValue(event) {
     event.preventDefault();
     if (this.state.maxProgressValue === "x") {
       var maxProgress = document.getElementById("max-progress").value;
-      if (!isNaN(maxProgress)) {
-        if (parseInt(maxProgress, 10) > 1) {
-          if (maxProgress < 220) {
-            this.setState({
-              maxProgressValue: parseInt(maxProgress, 10)
-            });
-            document.getElementById("max-progress").value = "";
-          } else {
-            document.getElementById("max-progress").value = "";
-            if (
-              confirm("Maximum progress value must be less than 220 to use")
-            ) {
-              return true;
-            } else {
-              throw new Error(
-                "Maximum progress value must be less than 220 to use"
-              );
-            }
-          }
-        } else {
-          document.getElementById("max-progress").value = "";
-          if (maxProgress !== "") {
-            if (
-              confirm("Maximum progress value must be greater than 1 to use")
-            ) {
-              return true;
-            } else {
-              throw new Error(
-                "Maximum progress value must be greater than 1 to use"
-              );
-            }
-          } else {
-            if (confirm("Input cannot be blank")) {
-              return true;
-            } else {
-              throw new Error("Input cannot be blank");
-            }
-          }
-        }
-      } else {
-        document.getElementById("max-progress").value = "";
-        if (confirm("Maximum progress value must be a number")) {
-          return true;
-        } else {
-          throw new Error("Maximum progress value must be a number");
-        }
-      }
+      this.maxProgressAlgorithm(maxProgress, "max-progress");
     } else {
       document.getElementById("max-progress").value = "";
       if (confirm("Maximum progress value already set")) {
@@ -219,6 +224,36 @@ class App extends React.Component {
       }
     }
   }
+  changeSettings() {
+    if (this.state.popupNumber % 2 === 0) {
+      document.getElementById("popup").style.display = "block";
+      this.setState({ buttonValue: "Close Settings" });
+    } else if (this.state.popupNumber % 2 === 1) {
+      document.getElementById("popup").style.display = "none";
+      this.setState({ buttonValue: "Change Settings" });
+    }
+    this.setState(state => ({ popupNumber: state.popupNumber + 1 }));
+  }
+  changeMaxValue(event) {
+    event.preventDefault();
+    if (this.state.maxProgressValue !== "x") {
+      var maxProgress = document.getElementById("max-progress-2").value;
+      this.maxProgressAlgorithm(maxProgress, "max-progress-2");
+    } else {
+      document.getElementById("popup").style.display = "none";
+      this.setState({ buttonValue: "Change Settings" });
+      this.setState(state => ({ popupNumber: state.popupNumber + 1 }));
+      document.getElementById("max-progress-2");
+
+      if (confirm("Maximum progress value not set yet, use the first form")) {
+        return true;
+      } else {
+        throw new Error(
+          "Maximum progress value not set yet, use the first form"
+        );
+      }
+    }
+  }
   render() {
     return (
       <div>
@@ -243,7 +278,9 @@ class App extends React.Component {
             <br />
 
             <div className="progress-bar-form">
-              <button className="progress-button" onClick={this.decrease}>
+              <button
+                className="progress-button normal-button"
+                onClick={this.decrease}>
                 -
               </button>
 
@@ -252,7 +289,9 @@ class App extends React.Component {
                 value={this.state.progressValue}
                 max={this.state.maxProgressValue}
               />
-              <button className="progress-button" onClick={this.increase}>
+              <button
+                className="progress-button normal-button"
+                onClick={this.increase}>
                 +
               </button>
               <p className="progress-value">
@@ -263,9 +302,26 @@ class App extends React.Component {
                 tasks complete
               </p>
             </div>
-            <button className="cancel-button" onClick={this.stop}>
-              Stop/Cancel
-            </button>
+            <div className="group">
+              <button className="cancel-button" onClick={this.stop}>
+                Stop/Cancel
+              </button>
+              <button className="change-settings" onClick={this.changeSettings}>
+                {this.state.buttonValue}
+              </button>
+            </div>
+            <div id="popup">
+              <form>
+                <label>
+                  Maximum progress value: {this.state.maxProgressValue}{" "}
+                </label>
+                <br />
+                <input id="max-progress-2" />
+                <button className="normal-button" onClick={this.changeMaxValue}>
+                  Change
+                </button>
+              </form>
+            </div>
           </div>
         </div>
         <div className="separation" />
