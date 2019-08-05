@@ -161,7 +161,9 @@ class App extends React.Component {
         return true;
       } else {
         this.setState({ maxProgressValue: "x" });
-        throw new Error("Maximum progress value already set");
+        throw new Error(
+          "Maximum progress value already set, change settings instead"
+        );
       }
     }
   }
@@ -238,12 +240,16 @@ class App extends React.Component {
     event.preventDefault();
     if (this.state.maxProgressValue !== "x") {
       var maxProgress = document.getElementById("max-progress-2").value;
+
+      if (parseInt(maxProgress, 10) < this.state.progressValue) {
+        this.setState({ progressValue: 0 });
+      }
       this.maxProgressAlgorithm(maxProgress, "max-progress-2");
     } else {
       document.getElementById("popup").style.display = "none";
       this.setState({ buttonValue: "Change Settings" });
       this.setState(state => ({ popupNumber: state.popupNumber + 1 }));
-      document.getElementById("max-progress-2");
+      document.getElementById("max-progress-2").value = "";
 
       if (confirm("Maximum progress value not set yet, use the first form")) {
         return true;
@@ -265,7 +271,7 @@ class App extends React.Component {
         <div className="separation separation-block" />
         <div id="navbar-form">
           <div id="progress-form">
-            <form onSubmit={this.setMaxValue}>
+            <form onSubmit={this.setMaxValue} autocomplete="off">
               <label htmlFor="max-progress">
                 Enter the maximum progress bar value:{" "}
               </label>
@@ -311,7 +317,7 @@ class App extends React.Component {
               </button>
             </div>
             <div id="popup">
-              <form>
+              <form autocomplete="off">
                 <label>
                   Maximum progress value: {this.state.maxProgressValue}{" "}
                 </label>
