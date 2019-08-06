@@ -282,40 +282,42 @@ class App extends React.Component {
             </form>
 
             <br />
+            <div className="border-div">
+              <div className="progress-bar-form">
+                <button
+                  className="progress-button normal-button"
+                  onClick={this.decrease}>
+                  -
+                </button>
 
-            <div className="progress-bar-form">
-              <button
-                className="progress-button normal-button"
-                onClick={this.decrease}>
-                -
-              </button>
+                <progress
+                  id="progress-bar"
+                  value={this.state.progressValue}
+                  max={this.state.maxProgressValue}
+                />
+                <button
+                  className="progress-button normal-button"
+                  onClick={this.increase}>
+                  +
+                </button>
+                <p className="progress-value">
+                  {this.state.progressValue} out of{" "}
+                  <span className="max-progress-value">
+                    {this.state.maxProgressValue}
+                  </span>{" "}
+                  tasks complete
+                </p>
+              </div>
 
-              <progress
-                id="progress-bar"
-                value={this.state.progressValue}
-                max={this.state.maxProgressValue}
-              />
-              <button
-                className="progress-button normal-button"
-                onClick={this.increase}>
-                +
-              </button>
-              <p className="progress-value">
-                {this.state.progressValue} out of{" "}
-                <span className="max-progress-value">
-                  {this.state.maxProgressValue}
-                </span>{" "}
-                tasks complete
-              </p>
-            </div>
-            <div className="group">
               <button className="cancel-button" onClick={this.stop}>
                 Stop/Cancel
               </button>
-              <button className="change-settings" onClick={this.changeSettings}>
-                {this.state.buttonValue}
-              </button>
             </div>
+            <button
+              className="change-settings normal-button"
+              onClick={this.changeSettings}>
+              {this.state.buttonValue}
+            </button>
             <div id="popup">
               <form autocomplete="off">
                 <label>
