@@ -18,7 +18,7 @@ class Footer extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     if (!this.state.text.length) {
-      if (confirm("Review cannot be empty")) {
+      if (window.confirm("Review cannot be empty")) {
         return true;
       } else {
         throw new Error("Review cannot be empty");
@@ -115,7 +115,11 @@ class App extends React.Component {
           document.getElementById(idstring).value = "";
         } else {
           document.getElementById(idstring).value = "";
-          if (confirm("Maximum progress value must be less than 220 to use")) {
+          if (
+            window.confirm(
+              "Maximum progress value must be less than 220 to use"
+            )
+          ) {
             return true;
           } else {
             throw new Error(
@@ -126,7 +130,11 @@ class App extends React.Component {
       } else {
         document.getElementById(idstring).value = "";
         if (maxProgress !== "") {
-          if (confirm("Maximum progress value must be greater than 1 to use")) {
+          if (
+            window.confirm(
+              "Maximum progress value must be greater than 1 to use"
+            )
+          ) {
             return true;
           } else {
             throw new Error(
@@ -134,7 +142,7 @@ class App extends React.Component {
             );
           }
         } else {
-          if (confirm("Input cannot be blank")) {
+          if (window.confirm("Input cannot be blank")) {
             return true;
           } else {
             throw new Error("Input cannot be blank");
@@ -143,7 +151,7 @@ class App extends React.Component {
       }
     } else {
       document.getElementById(idstring).value = "";
-      if (confirm("Maximum progress value must be a number")) {
+      if (window.confirm("Maximum progress value must be a number")) {
         return true;
       } else {
         throw new Error("Maximum progress value must be a number");
@@ -157,7 +165,7 @@ class App extends React.Component {
       this.maxProgressAlgorithm(maxProgress, "max-progress");
     } else {
       document.getElementById("max-progress").value = "";
-      if (confirm("Maximum progress value already set")) {
+      if (window.confirm("Maximum progress value already set")) {
         return true;
       } else {
         this.setState({ maxProgressValue: "x" });
@@ -175,7 +183,9 @@ class App extends React.Component {
         this.setState({ progressValue: 0 });
         this.setState({ maxProgressValue: "x" });
         if (
-          confirm("Progress Value is greater than the maximum progress value")
+          window.confirm(
+            "Progress Value is greater than the maximum progress value"
+          )
         ) {
           return true;
         } else {
@@ -185,7 +195,7 @@ class App extends React.Component {
         }
       }
     } else {
-      if (confirm("Maximum progress value not set yet")) {
+      if (window.confirm("Maximum progress value not set yet")) {
         return true;
       } else {
         throw new Error("Maximum progress value not set yet");
@@ -198,14 +208,14 @@ class App extends React.Component {
         this.setState(state => ({ progressValue: state.progressValue - 1 }));
       } else {
         this.setState({ maxProgressValue: "x" });
-        if (confirm("Progress Value is less than 0")) {
+        if (window.confirm("Progress Value is less than 0")) {
           return true;
         } else {
           throw new Error("Progress Value is less than 0");
         }
       }
     } else {
-      if (confirm("Maximum progress value not set yet")) {
+      if (window.confirm("Maximum progress value not set yet")) {
         return true;
       } else {
         throw new Error("Maximum progress value not set yet");
@@ -219,7 +229,7 @@ class App extends React.Component {
         maxProgressValue: "x"
       });
     } else {
-      if (confirm("Already cleaned up")) {
+      if (window.confirm("Already cleaned up")) {
         return true;
       } else {
         throw new Error("Already cleaned up");
@@ -251,7 +261,9 @@ class App extends React.Component {
       this.setState(state => ({ popupNumber: state.popupNumber + 1 }));
       document.getElementById("max-progress-2").value = "";
 
-      if (confirm("Maximum progress value not set yet, use the first form")) {
+      if (
+        window.confirm("Maximum progress value not set yet, use the first form")
+      ) {
         return true;
       } else {
         throw new Error(
@@ -271,7 +283,7 @@ class App extends React.Component {
         <div className="separation separation-block" />
         <div id="navbar-form">
           <div id="progress-form">
-            <form onSubmit={this.setMaxValue} autocomplete="off">
+            <form onSubmit={this.setMaxValue} autoComplete="off">
               <label htmlFor="max-progress">
                 Enter the maximum progress bar value:{" "}
               </label>
@@ -319,7 +331,7 @@ class App extends React.Component {
               {this.state.buttonValue}
             </button>
             <div id="popup">
-              <form autocomplete="off">
+              <form autoComplete="off">
                 <label>
                   Maximum progress value: {this.state.maxProgressValue}{" "}
                 </label>
@@ -343,8 +355,8 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <div class="position">
-          <div class="container">
+        <div className="position">
+          <div className="container">
             <nav>
               <ul>
                 <h1 id="navbar-h1">React Progress Bar</h1>
