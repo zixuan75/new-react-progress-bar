@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
+
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -74,6 +75,7 @@ class Footer extends React.Component {
     );
   }
 }
+
 function List(props) {
   return (
     <div>
@@ -251,8 +253,42 @@ class App extends React.Component {
     if (this.state.maxProgressValue !== "x") {
       var maxProgress = document.getElementById("max-progress-2").value;
 
-      if (parseInt(maxProgress, 10) < this.state.progressValue) {
-        this.setState({ progressValue: 0 });
+      if (parseInt(maxProgress, 10) === this.state.maxProgressValue) {
+        document.getElementById("popup").style.display = "none";
+        this.setState({ buttonValue: "Change Settings" });
+        this.setState(state => ({ popupNumber: state.popupNumber + 1 }));
+        document.getElementById("max-progress-2").value = "";
+
+        if (
+          window.confirm(
+            "You have already set the progress value to what you typed."
+          )
+        ) {
+          return true;
+        } else {
+          throw new Error(
+            "You have already set the progress value to what you typed"
+          );
+        }
+      }
+
+      if (maxProgress !== "") {
+        if (this.state.progressValue !== 0) {
+          if (parseInt(maxProgress, 10) < this.state.progressValue) {
+            this.setState({ progressValue: 0 });
+          } else {
+            if (
+              window.confirm("Do you want to set the progress value to zero?")
+            ) {
+              this.setState({ progressValue: 0 });
+            }
+          }
+        }
+      } else {
+        document.getElementById("popup").style.display = "none";
+        this.setState({ buttonValue: "Change Settings" });
+        this.setState(state => ({ popupNumer: state.popupNumber + 1 }));
+        document.getElementById("max-progress-2").value = "";
       }
       this.maxProgressAlgorithm(maxProgress, "max-progress-2");
     } else {
@@ -271,6 +307,7 @@ class App extends React.Component {
         );
       }
     }
+    // console.log(<Header />);
   }
   render() {
     return (
