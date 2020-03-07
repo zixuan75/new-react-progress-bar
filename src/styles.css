@@ -260,3 +260,7 @@ li a:hover {
 .reviews-border {
   padding-top: 10px;
 }
+.percentage-bar {
+  color: green;
+  font-weight: bold;
+}

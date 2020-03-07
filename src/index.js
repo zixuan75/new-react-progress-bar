@@ -428,7 +428,7 @@ class App extends React.Component {
   findPercentage() {
     if (this.state.maxProgressValue !== "x") {
       return (
-        <span>
+        <span className="percentage-bar">
           (
           {Math.round(
             1000 * (this.state.progressValue / this.state.maxProgressValue)
