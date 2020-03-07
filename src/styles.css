@@ -26,6 +26,9 @@ body {
   border: 5px solid olivedrab;
   background-color: lightgreen;
 }
+.wide {
+  width: 250px;
+}
 #react-h1 {
   font-family: cursive; /* only on later versions of Firefox*/
   border: 12px solid skyblue;
@@ -72,7 +75,7 @@ body {
   float: left;
 }
 .change-settings {
-  height: 149px;
+  height: 151px;
   border: 5px solid darkolivegreen;
 }
 #progress-form,
@@ -92,6 +95,10 @@ body {
   background-color: gray;
   color: white;
   transition: ease-in-out 750ms;
+}
+
+b {
+  color: darkred;
 }
 #review {
   color: darkcyan;
