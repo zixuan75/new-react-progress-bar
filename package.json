@@ -1,7 +1,7 @@
 {
   "name": "new-react-progress-bar",
   "version": "1.0.0",
-  "description": "This is not JUST a progress bar. This is a CONTROLLABLE progress bar with many other thing sprinkled in as well, for example the navigation bar and the review system. This is all React JSX and pure CSS (no CSS  dependencies).",
+  "description": "This is not JUST a progress bar. This is a CONTROLLABLE progress bar with many other things sprinkled in as well, for example the navigation bar and the review system. This is all React JSX and pure CSS (no CSS  dependencies).",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
