@@ -1,7 +1,7 @@
 {
-  "name": "react-progress-bar",
+  "name": "new-react-progress-bar",
   "version": "1.0.0",
-  "description": "The React advanced progress bar",
+  "description": "",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
