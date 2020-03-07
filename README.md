@@ -13,3 +13,5 @@ To run it, you can go to [this link](https://v559i.csb.app/).
 Or, you can do it (Linux only) by installing NodeJS (>= 6.0.0) and NPM (>= 5.2.0).
 
 Then run: `npx create-react-app my-app' (not`npm`). Delete all the my-app directories and replace them with these directories. Remove the ones that don't contain JS, CSS or HTML. Then start npm by running`npm start`. Go to localhost:8000 and you're done!
+
+You can also go to [the wiki](https://github.com/zixuan75/react-project/wiki).
