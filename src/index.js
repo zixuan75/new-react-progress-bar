@@ -110,6 +110,7 @@ class App extends React.Component {
     this.getMaxProgressValue = this.getMaxProgressValue.bind(this);
     this.getProgressValue = this.getProgressValue.bind(this);
     this.changeProgressValue = this.changeProgressValue.bind(this);
+    this.findPercentage = this.findPercentage.bind(this);
   }
   maxProgressAlgorithm(maxProgress, idstring) {
     if (!isNaN(maxProgress)) {
@@ -424,6 +425,21 @@ class App extends React.Component {
       }
     }
   }
+  findPercentage() {
+    if (this.state.maxProgressValue !== "x") {
+      return (
+        <span>
+          (
+          {Math.round(
+            1000 * (this.state.progressValue / this.state.maxProgressValue)
+          ) / 10}
+          %)
+        </span>
+      );
+    } else {
+      return <span />;
+    }
+  }
   render() {
     return (
       <div>
@@ -471,7 +487,7 @@ class App extends React.Component {
                   <span className="max-progress-value">
                     {this.state.maxProgressValue}
                   </span>{" "}
-                  tasks complete
+                  {this.findPercentage()} tasks complete
                 </p>
               </div>
 
