@@ -315,16 +315,32 @@ class App extends React.Component {
   }
   getMaxProgressValue() {
     if (this.state.maxProgressValue === "x") {
-      return <span>Not set yet</span>;
+      return (
+        <span>
+          <b>Not set yet</b>
+        </span>
+      );
     } else {
-      return <span>{this.state.maxProgressValue}</span>;
+      return (
+        <span>
+          <b>{this.state.maxProgressValue}</b>
+        </span>
+      );
     }
   }
   getProgressValue() {
     if (this.state.maxProgressValue === "x") {
-      return <span>---</span>;
+      return (
+        <span>
+          <b>---</b>
+        </span>
+      );
     } else {
-      return <span>{this.state.progressValue}</span>;
+      return (
+        <span>
+          <b>{this.state.progressValue}</b>
+        </span>
+      );
     }
   }
   changeProgressValue(event) {
