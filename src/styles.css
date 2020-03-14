@@ -236,6 +236,11 @@ li a:hover {
   padding: 15px;
   margin-left: 20px;
 }
+.bye:hover {
+  background-color: lightblue;
+  outline: 10px solid lightblue;
+  color: green;
+}
 .review-text {
   border-radius: 20px 0px 0px 20px;
   border: 12px solid darkred;
