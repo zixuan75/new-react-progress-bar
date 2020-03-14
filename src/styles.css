@@ -30,7 +30,7 @@ body {
   width: 250px;
 }
 #react-h1 {
-  font-family: cursive; /* only on later versions of Firefox*/
+  font-family: sans-serif;
   border: 12px solid skyblue;
   background-color: teal;
   color: pink;
