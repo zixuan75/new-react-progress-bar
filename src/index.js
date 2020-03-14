@@ -426,16 +426,36 @@ class App extends React.Component {
     }
   }
   findPercentage() {
+    var percentage = Math.round(
+      (1000 * (this.state.progressValue / this.state.maxProgressValue)) / 10
+    );
+
     if (this.state.maxProgressValue !== "x") {
-      return (
-        <span className="percentage-bar">
-          (
-          {Math.round(
-            1000 * (this.state.progressValue / this.state.maxProgressValue)
-          ) / 10}
-          %)
-        </span>
-      );
+      if (percentage <= 25) {
+        return (
+          <span className="percentage-bar percentage-bar-red">
+            ({percentage}%)
+          </span>
+        );
+      } else if (percentage > 25 && percentage <= 50) {
+        return (
+          <span className="percentage-bar percentage-bar-orange">
+            ({percentage}%)
+          </span>
+        );
+      } else if (percentage > 50 && percentage <= 75) {
+        return (
+          <span className="percentage-bar percentage-bar-yellow">
+            ({percentage}%)
+          </span>
+        );
+      } else {
+        return (
+          <span className="percentage-bar percentage-bar-green">
+            ({percentage}%)
+          </span>
+        );
+      }
     } else {
       return <span />;
     }

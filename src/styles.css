@@ -261,7 +261,18 @@ li a:hover {
 .reviews-border {
   padding-top: 10px;
 }
-.percentage-bar {
+.percentage-bar-red {
+  color: red;
+}
+.percentage-bar-orange {
+  color: orange;
+}
+.percentage-bar-yellow {
+  color: yellow;
+}
+.percentage-bar-green {
   color: green;
+}
+.percentage-bar {
   font-weight: bold;
 }
