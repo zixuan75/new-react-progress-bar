@@ -172,7 +172,11 @@ class App extends React.Component {
       this.maxProgressAlgorithm(maxProgress, "max-progress");
     } else {
       document.getElementById("max-progress").value = "";
-      if (window.confirm("Maximum progress value already set")) {
+      if (
+        window.confirm(
+          "Maximum progress value already set, change settings instead"
+        )
+      ) {
         return true;
       } else {
         this.setState({ maxProgressValue: "x" });
