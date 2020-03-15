@@ -278,6 +278,10 @@ li a:hover {
 .percentage-bar-green {
   color: green;
 }
-.percentage-bar {
+.percentage-bar,
+.link {
   font-weight: bold;
+}
+.link {
+  color: lightskyblue;
 }

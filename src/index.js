@@ -586,8 +586,9 @@ class Header extends React.Component {
           <h1 id="react-h1">The React Progress Bar</h1>
           <p>
             This is one of the examples of advanced progress bars. This is also
-            a improvement to the old React Progress Bar which was active from
-            December 2018 to January 2019. Welcome!
+            a improvement to the old{" "}
+            <span className="link">React Progress Bar</span> which was active
+            from December 2018 to January 2019. Welcome!
           </p>
         </div>
       </div>
