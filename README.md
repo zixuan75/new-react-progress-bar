@@ -18,4 +18,4 @@ Go to the wiki at [here](https://github.com/zixuan75/react-project/wiki). Ignore
 ## Link to Info
 
 - [Link here](https://zixuan75.github.io/new-react-progress-bar/info)
-- [Link to info page on GitHub](https://github.com/zixuan75/new-react-progress-bar/blob/master/indo.md)
+- [Link to info page on GitHub](https://github.com/zixuan75/new-react-progress-bar/blob/master/info.md)
