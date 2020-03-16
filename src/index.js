@@ -430,9 +430,9 @@ class App extends React.Component {
     }
   }
   findPercentage() {
-    var percentage = Math.round(
-      (1000 * (this.state.progressValue / this.state.maxProgressValue)) / 10
-    );
+    var percentage = (Math.round(
+      1000 * (this.state.progressValue / this.state.maxProgressValue)
+    )) / 10;
 
     if (this.state.maxProgressValue !== "x") {
       if (percentage <= 25) {
