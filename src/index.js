@@ -8,7 +8,8 @@ class Footer extends React.Component {
     super(props);
     this.state = {
       items: [],
-      text: ""
+      text: "",
+      reviews: 0
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -18,18 +19,27 @@ class Footer extends React.Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    if (!this.state.text.length) {
-      if (window.confirm("Review cannot be empty")) {
-        return true;
-      } else {
-        throw new Error("Review cannot be empty");
+    if (this.state.reviews < 1) {
+      if (!this.state.text.length) {
+        if (window.confirm("Review cannot be empty")) {
+          return true;
+        } else {
+          throw new Error("Review cannot be empty");
+        }
       }
+      const newItem = {
+        text: this.state.text,
+        id: Date.now()
+      };
+      this.setState(state => ({
+        items: state.items.concat(newItem),
+        reviews: state => ({ reviews: state.reviews + 1 }),
+        text: ""
+      }));
+    } else {
+      this.setState({ text: "" });
+      throw new Error("You can only write one review");
     }
-    const newItem = {
-      text: this.state.text,
-      id: Date.now()
-    };
-    this.setState(state => ({ items: state.items.concat(newItem), text: "" }));
   }
   render() {
     return (
@@ -40,9 +50,7 @@ class Footer extends React.Component {
 
           <label htmlFor="new-review">
             <span className="review-text">Review the progress bar system:</span>
-            <span className="review-text-2">
-              (You can write as many as you want!)
-            </span>
+            <span className="review-text-2">(You can do only one!)</span>
           </label>
           <br />
           <br />
@@ -67,8 +75,8 @@ class Footer extends React.Component {
         <div className="separation" />
         <div id="thanks">
           <p>
-            Thank you for visiting this website. Please check more of my
-            projects if you want to. <span className="bye">Bye!</span>
+            Thank you. Please see more of my projects if you want to.{" "}
+            <span className="bye">Bye!</span>
           </p>
         </div>
         <div className="separation" />
@@ -430,9 +438,10 @@ class App extends React.Component {
     }
   }
   findPercentage() {
-    var percentage = (Math.round(
-      1000 * (this.state.progressValue / this.state.maxProgressValue)
-    )) / 10;
+    var percentage =
+      Math.round(
+        1000 * (this.state.progressValue / this.state.maxProgressValue)
+      ) / 10;
 
     if (this.state.maxProgressValue !== "x") {
       if (percentage <= 25) {
@@ -477,7 +486,7 @@ class App extends React.Component {
           <div id="progress-form">
             <form onSubmit={this.setMaxValue} autoComplete="off">
               <label htmlFor="max-progress">
-                Enter the maximum progress bar value:{" "}
+                Enter the max progress bar value:{" "}
               </label>
               <input type="text" id="max-progress" />
               <button type="submit" id="enter-button">
