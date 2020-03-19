@@ -113,6 +113,9 @@ b {
   margin-left: 20px;
 }
 
+#review:hover #reviews {
+  color: darkcyan;
+}
 #progress-form:hover {
   background-color: olivedrab;
   margin-left: 20px;
@@ -253,7 +256,7 @@ li a:hover {
   border: 12px solid darkcyan;
   outline: 10px solid lightgreen;
 }
-.reviews {
+#reviews {
   border-left: 5px solid blue;
   border-top: 5px solid blue;
   border-bottom: 5px solid blue;
@@ -262,6 +265,8 @@ li a:hover {
   padding-top: 5px;
   padding-bottom: 5px;
   font-size: 20px;
+  color: lightgreen;
+  transition: all ease-in-out 1200ms;
 }
 .reviews-border {
   padding-top: 10px;

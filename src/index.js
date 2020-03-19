@@ -33,7 +33,7 @@ class Footer extends React.Component {
       };
       this.setState(state => ({
         items: state.items.concat(newItem),
-        reviews: state => ({ reviews: state.reviews + 1 }),
+        reviews: state.reviews + 1,
         text: ""
       }));
     } else {
@@ -91,7 +91,7 @@ function List(props) {
       {props.items.map(item => (
         <div className="reviews-border">
           <div className="separation" />
-          <p className="reviews" key={item.id}>
+          <p id="reviews" key={item.id}>
             {item.text}
           </p>
         </div>
