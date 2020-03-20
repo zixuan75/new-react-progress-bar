@@ -38,7 +38,11 @@ class Footer extends React.Component {
       }));
     } else {
       this.setState({ text: "" });
-      throw new Error("You can only write one review");
+      if (window.confirm("Only one review allowed!")) {
+        return true;
+      } else {
+        throw new Error("Only one review allowed");
+      }
     }
   }
   render() {
