@@ -29,7 +29,7 @@ class Footer extends React.Component {
       }
       const newItem = {
         text: this.state.text,
-        id: Date.now()
+        id: performance.now()
       };
       this.setState(state => ({
         items: state.items.concat(newItem),
@@ -74,7 +74,10 @@ class Footer extends React.Component {
           >
             Add Review
           </button>
-          <List items={this.state.items} />
+          <div className="reviews-border">
+            <div className="separation" />
+            <List items={this.state.items} />
+          </div>
         </div>
         <div className="separation" />
         <div id="thanks">
@@ -93,12 +96,9 @@ function List(props) {
   return (
     <div>
       {props.items.map(item => (
-        <div className="reviews-border">
-          <div className="separation" />
-          <p id="reviews" key={item.id}>
-            {item.text}
-          </p>
-        </div>
+        <p id="reviews" key={item.id}>
+          {item.text}
+        </p>
       ))}
     </div>
   );
